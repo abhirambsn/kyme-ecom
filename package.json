@@ -1,4 +1,44 @@
 {
-  "name": "kyme",
-  "packageManager": "yarn@4.5.2"
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2",
+    "typescript-eslint": "^8.18.1"
+  },
+  "packageManager": "pnpm@10.0.0-rc.0+sha512.bce495587126f9a37d64150bf80dcf9bd96f0d64cfd450c9b1a7e5bf2cfc81aef3d50178f259855351c872905a240861a55031652c81e8a11665bfa65f6a1dc2",
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "prepare": "husky",
+    "ui": "pnpm --filter ui",
+    "admin-ui": "pnpm --filter admin-ui",
+    "core-ui-lib": "pnpm --filter core-ui-lib",
+    "api-gateway": "pnpm --filter api-gateway",
+    "auth-service": "pnpm --filter auth-service",
+    "product-service": "pnpm --filter product-service",
+    "order-service": "pnpm --filter order-service",
+    "payment-service": "pnpm --filter payment-service",
+    "shipping-service": "pnpm --filter shipping-service",
+    "notification-service": "pnpm --filter notification-service",
+    "cart-service": "pnpm --filter cart-service",
+    "import-export-service": "pnpm --filter import-export-service",
+    "invoice-service": "pnpm --filter invoice-service",
+    "tenant-metadata-service": "pnpm --filter tenant-metadata-service"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
 }
